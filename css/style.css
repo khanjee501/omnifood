@@ -156,3 +156,8 @@ body {
 .hero-image {
   width: 100%;
 }
+
+/* !important should be used with helper classes as a good practice */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
