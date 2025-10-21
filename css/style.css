@@ -115,6 +115,10 @@ body {
   font-size: 2rem;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+
+  /* Always put this on original state otherwise it wont work */
+  /* tansition: all if we want to transition all the props */
+  transition: background-color 0.3s;
 }
 
 .btn--full:link,
