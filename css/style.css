@@ -62,9 +62,28 @@ Medium: 11px
   box-sizing: border-box;
 }
 
+html {
+  /* font-size: 10px */
+  /* 10px / 16px => 0.625 => 62.5% */
+  /* percentage of users font-size browser settings */
+  font-size: 62.5%;
+}
+
 body {
   font-family: sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
+}
+
+.hero {
+  max-width: 130rem;
+  /* center in viewport */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.hero-image {
+  width: 100%;
 }
