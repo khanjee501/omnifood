@@ -79,8 +79,34 @@ body {
 }
 
 /***********************/
-/* GENERAL COMPONENTS */
+/* GENERAL REUSBALE COMPONENTS */
 /***********************/
+
+/* REUSABLE Grid with 2 ,3 and 4 columns*/
+.container {
+  /* Convention that other grids should have 1200px width on larger screens
+  and 1300px for Hero */
+  max-width: 120rem;
+  padding: 3.2rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
 
 .primary-heading {
   font-size: 5.2rem;
@@ -215,6 +241,8 @@ body {
 }
 
 .hero {
+  /* Convention to set the width of Hero to 1300px and rest of the
+  sections at 1200px */
   max-width: 130rem;
   /* center in viewport */
   margin: 0 auto;
