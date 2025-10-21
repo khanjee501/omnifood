@@ -41,6 +41,8 @@ Paragraph default: 1.6
 #555
 #333
 
+NB: Genarted from tintsandshades.com website
+
 --- 05 SHADOWS
 
 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
@@ -76,12 +78,75 @@ body {
   color: #555;
 }
 
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 9.6rem;
+}
+
 .hero {
   max-width: 130rem;
   /* center in viewport */
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.primary-heading {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 4.2rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* Setting this way will add border to outside and will distore
+  the ui when hover over it. Instead we will use a trick to add border
+  to inside so it doesnt add extra pixels by adding border to outside and
+  distort ui
+
+  border: 3px solid #fff;
+  */
+  /* TRICK TO ADD BORDER INSIDE */
+  box-shadow: inset 0 0 0 3px #fff;
 }
 
 .hero-image {
