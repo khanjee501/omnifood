@@ -197,6 +197,26 @@ Hence we will add classes here and then in html where needed */
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+/* we remove the underline and add underline in this way
+which is ideal and look good by adding some padding bottom so
+there is space between text and line */
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  /* currentColor is the text color above in this block and
+  in this way the borderbottom will have the same color if we change
+  it on hover so both the text and line will be of same color */
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+}
+
 /* !important should be used with helper classes as a good practice */
 .margin-right-sm {
   margin-right: 1.6rem !important;
