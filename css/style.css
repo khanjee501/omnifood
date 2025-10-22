@@ -258,6 +258,17 @@ they dont auto sacle like text does */
   will not be rounded and we have a nice property for it and
   a nice trick that is overflow: hidden */
   overflow: hidden;
+  transition: all 0.4s;
+}
+
+.meal:hover {
+  /* Trasnsiiton on two axes */
+  /* transform: translate(2rem, 2rem); */
+  /* Trasnsiiton on Y axes */
+  transform: translateY(-1.2rem);
+  /* increase the shadow a little and make it lighter and diffuse
+  so it looks realistic */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
 }
 
 .meal-content {

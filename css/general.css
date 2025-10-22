@@ -221,6 +221,7 @@ there is space between text and line */
   1px. So the trick is using the transparent keywrod as follow */
   /* border-bottom: none; */
   border-bottom: 1px solid transparent;
+  transition: all 0.3s;
 }
 
 /* !important should be used with helper classes as a good practice */
@@ -230,6 +231,10 @@ there is space between text and line */
 
 .margin-bottom-md {
   margin-bottom: 2.4rem !important;
+}
+
+.center-text {
+  text-align: center;
 }
 
 strong {
