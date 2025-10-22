@@ -215,6 +215,12 @@ there is space between text and line */
 .link:hover,
 .link:active {
   color: #cf711f;
+  /* One of the practice is then to remove this border bottom that
+  we gave on hover but there is a trick for that cuz the
+  border-bottom: none; will not work as it will distort the ui by
+  1px. So the trick is using the transparent keywrod as follow */
+  /* border-bottom: none; */
+  border-bottom: 1px solid transparent;
 }
 
 /* !important should be used with helper classes as a good practice */
