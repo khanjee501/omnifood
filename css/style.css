@@ -160,9 +160,49 @@ at its correct place */
 }
 
 .step-img-box {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.step-img-box:before,
+.step-img-box:after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+
+  position: absolute;
+  /* this will not work, we will also have to use transform and translate as below */
+  top: 50%;
+  left: 50%;
+  /* This will work now in combination with top and left */
+  transform: translate(-50%, -50%);
+}
+
+.step-img-box:before {
+  width: 60%;
+  /* height wont work here, but there is a nice trick
+  to use padding-bottom: 60% which will work in this case.
+  Using pxs instead of percentage will give us the box but we
+  dont want to use pixels as they are not responsive*/
+  /* height: 60%;
+  height: 100px; */
+  /* It has no height but padding-bottom of 60% will make
+  it square and that is what we want */
+  padding-bottom: 60%;
+  background-color: #fdf2e9;
+  z-index: -2;
+}
+
+/* Now if we want to add another cirle we cant use before but
+we can use after psuedo-element */
+
+.step-img-box:after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: #fae5d3;
+  z-index: -1;
 }
 
 /* It is advisable to style images as soon as possible as
