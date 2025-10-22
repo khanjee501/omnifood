@@ -108,13 +108,33 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
-.primary-heading {
-  font-size: 5.2rem;
+.primary-heading,
+.heading-secondary {
   font-weight: 700;
-  line-height: 1.05;
   color: #333;
   letter-spacing: -0.5px;
+}
+
+.primary-heading {
+  font-size: 5.2rem;
+  line-height: 1.05;
   margin-bottom: 4.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
 }
 
 .btn:link,
@@ -303,4 +323,18 @@ at its correct place */
 .delivered-text span {
   color: #cf711f;
   font-weight: 700;
+}
+
+/***********************/
+/* HOW OT WORKS SECTION */
+/***********************/
+
+.section-how {
+  padding: 9.6rem 0;
+}
+
+/* It is advisable to style images as soon as possible as
+they dont auto sacle like text does */
+.step-img {
+  width: 50%;
 }
