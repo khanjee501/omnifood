@@ -250,3 +250,30 @@ they dont auto sacle like text does */
 .section-meals {
   padding: 4.4rem 0;
 }
+
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  /* default flex direction is row but we can set to column
+  Once set to column the properties work oppsite when compared
+  to flex-direction row ie
+
+  align-items will center hor, justify-content ver and gap vertically too*/
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+}
+
+.meal-img {
+  width: 100%;
+}
