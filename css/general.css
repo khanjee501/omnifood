@@ -167,6 +167,7 @@ Hence we will add classes here and then in html where needed */
   letter-spacing: 0.75px;
 }
 
+.btn,
 .btn:link,
 .btn:visited {
   display: inline-block;
@@ -175,6 +176,10 @@ Hence we will add classes here and then in html where needed */
   font-weight: 600;
   padding: 1.6rem 3.2rem;
   border-radius: 9px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
 
   /* Always put this on original state otherwise it wont work */
   /* tansition: all if we want to transition all the props */
@@ -211,6 +216,18 @@ Hence we will add classes here and then in html where needed */
   */
   /* TRICK TO ADD BORDER INSIDE */
   box-shadow: inset 0 0 0 3px #fff;
+}
+
+.btn--form {
+  background-color: #45260a;
+  color: #fdf2e9;
+  align-self: end;
+  padding: 1.2rem;
+}
+
+.btn--form:hover {
+  background-color: #fff;
+  color: #555;
 }
 
 /* we remove the underline and add underline in this way
