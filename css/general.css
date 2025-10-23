@@ -274,6 +274,17 @@ there is space between text and line */
   color: #e67e22;
 }
 
+/* Focus states is cuz of property call outline
+We will customize the focus state now and the border*/
+*:focus {
+  /* This will remove the focus states completely. Focus states
+    are for accessibility. For someone using keyboard only
+    this will be a nightmare.*/
+  outline: none;
+
+  box-shadow: 0 0 0 0.8rem rgba(230, 125, 34, 0.5);
+}
+
 /* As lists are good candidates for reusability we have moved
 it to the general css file and we will reuse it where needed */
 

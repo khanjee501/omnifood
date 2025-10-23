@@ -611,3 +611,12 @@ in cases of forms */
 .cta-form input::placeholder {
   color: #aaa;
 }
+
+.cta *:focus {
+  /* This will remove the focus states completely. Focus states
+    are for accessibility. For someone using keyboard only
+    this will be a nightmare.*/
+  outline: none;
+
+  box-shadow: 0 0 0 0.8rem rgb(253, 242, 233, 0.5);
+}
