@@ -414,11 +414,22 @@ they dont auto sacle like text does */
   padding: 1.6rem;
 }
 
+.gallery-item {
+  /* As we scale the image son hover, the images overflow
+  in each direction from the container. This property will
+  fix this. A very nice trick indeed */
+  overflow: hidden;
+}
+
 .gallery-item img {
   /* display: block will fix the white space around images as
   they are inline elements */
   display: block;
-
   /* This will fix the images being too wide */
   width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.1);
 }
