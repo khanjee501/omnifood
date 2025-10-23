@@ -427,17 +427,21 @@ they dont auto sacle like text does */
 
 .pricing-plan {
   border-radius: 11px;
-  padding: 4.8rem;
   width: 75%;
 }
 
 .pricing-plan--starter {
   justify-self: end;
+  /* this will add extra 2 pxls on started card. Will fix it */
   border: 2px solid #fdf2e9;
+  /* padding 2 pxls less than complete card in order to fix
+  extra 2 pxls added by its border */
+  padding: 4.6rem;
 }
 
 .pricing-plan--complete {
   background-color: #fdf2e9;
+  padding: 4.8rem;
 }
 
 .plan-header {
