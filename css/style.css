@@ -366,7 +366,7 @@ they dont auto sacle like text does */
 /***********************/
 
 .section-testimonial {
-  padding: 4.2rem 0;
+  padding: 9.6rem 0;
 }
 
 .testimonials {
@@ -391,4 +391,19 @@ they dont auto sacle like text does */
 .testimonial-name {
   font-size: 1.6rem;
   color: #777;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
+}
+
+.gallery-item img {
+  /* display: block will fix the white space around images as
+  they are inline elements */
+  display: block;
+
+  /* This will fix the images being too wide */
+  width: 100%;
 }
