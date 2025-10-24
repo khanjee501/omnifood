@@ -133,4 +133,36 @@ Should not use pixels on media queries.
   .btn--form {
     margin-top: 1.2rem;
   }
+
+  /* MOBILE NAVIGATION */
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    /* We wont want to set relative position its parent cuz
+     we want itbas overlay over viewport*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* This will set height to the 100% of viewport height */
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
 }
