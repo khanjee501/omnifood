@@ -1,0 +1,70 @@
+/*
+Should not use pixels on media queries.
+ For selecting the screen size for media queries, we should not use
+ rem too, because 1rem will not be equal to 10px as we set
+ by font-size: 62.5%. In the css classes, tags and selectors
+ that we will use inside media queries, we can use rem but not
+ for the max-width screen size in the construstor of media queries
+ as below. Instead we should use em instead of rem which is equal to
+ 16px. PLuse using rem in media qureis has some bugs in some browsers*/
+
+/***********************/
+/* BREAKPOINT 1344px (smaller desktops) */
+/***********************/
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .primary-heading {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/***********************/
+/* BREAKPOINT 1200px (Landscape tablets) */
+/***********************/
+
+@media (max-width: 75em) {
+  /* this is a very handy trick cuz we have now
+    set 1rem to 9px. 120rem first was 120 * 10 = 1200px and
+    now for this media query 1rem = 9px so 120rem = 1080px. Great */
+  html {
+    /* 9px / 16px = 56.25% */
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }
+}
