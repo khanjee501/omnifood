@@ -8,8 +8,11 @@ Should not use pixels on media queries.
  as below. Instead we should use em instead of rem which is equal to
  16px. PLuse using rem in media qureis has some bugs in some browsers*/
 
+/* A media query should better work along 200px but should
+ at least work for about 150px */
+
 /***********************/
-/* BREAKPOINT 1344px (smaller desktops) */
+/* BELOW 1344px (smaller desktops) */
 /***********************/
 
 @media (max-width: 84em) {
@@ -27,7 +30,7 @@ Should not use pixels on media queries.
 }
 
 /***********************/
-/* BREAKPOINT 1200px (Landscape tablets) */
+/* BELOW 1200px (Landscape tablets) */
 /***********************/
 
 @media (max-width: 75em) {
@@ -66,5 +69,68 @@ Should not use pixels on media queries.
 
   .testimonials-container {
     padding: 9.6rem 3.2rem;
+  }
+}
+
+/***********************/
+/* BELOW 944px (Tablets) */
+/***********************/
+
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 50% */
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-image-box {
+    text-align: center;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .hero-image {
+    width: 60%;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
   }
 }
