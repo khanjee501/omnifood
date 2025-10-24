@@ -125,6 +125,10 @@ on the last grid child. But this takes of all the last grid childs*/
   grid-template-columns: repeat(4, 1fr);
 }
 
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+
 /* Following reusable grid paractices. If we set this align-items
 property on the grid itself then the reusability is lost
 Hence we will add classes here and then in html where needed */
