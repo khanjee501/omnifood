@@ -69,6 +69,12 @@ html {
   /* 10px / 16px => 0.625 => 62.5% */
   /* percentage of users font-size browser settings */
   font-size: 62.5%;
+  /* This is a nice trick for animations on horizontal axes
+  Like moving animations from right or left to viewport. So we
+  use transform and translate, but will set overflow-x to hidden
+  on both html and body so we can't scroll in right or left direction as that
+  will be a wrose ux. */
+  overflow-x: hidden;
 }
 
 body {
@@ -76,6 +82,8 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #555;
+
+  overflow-x: hidden;
 }
 
 /***********************/

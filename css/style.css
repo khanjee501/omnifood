@@ -7,6 +7,9 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
+  /* Will set position relative here as we have set position
+  to absolute on main-nav */
+  position: relative;
 
   /* Fix the height if we want to have a sticky header.
   Otherwise we can use padding at top and bottom instaed of
@@ -78,7 +81,6 @@
 
 /* Selecting elements by their attributes such as the below
 icon of name close-outline having class icon-mobile-nav */
-
 .icon-mobile-nav[name="close-outline"] {
   display: none;
 }

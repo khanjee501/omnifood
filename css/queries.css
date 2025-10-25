@@ -154,6 +154,42 @@ Should not use pixels on media queries.
     display: flex;
     align-items: center;
     justify-content: center;
+    /* The third property is animation type */
+    transition: all 0.5s ease-in;
+
+    transform: translateX(100%);
+
+    /* Correct way to hide elements is as below by three
+    properties and not by diplay: none; */
+
+    /* Hide the element visually */
+    opacity: 0;
+
+    /* We need to amke it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    /* Reverse the three properties here */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+
+    /* Will animate back mobile nav to viewport */
+    transform: translateX(0);
+  }
+
+  /* show close icon when nav-open class */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* hide menu when nav-open class */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
   }
 
   .main-nav-list {
