@@ -61,11 +61,22 @@ const obs = new IntersectionObserver(
     if (!ent.isIntersecting) {
       document.body.classList.add("sticky");
     }
+
+    // remove sticky when as soon as we scroll back to hero section
+    // as soon as it some sinto viewport
+    if (ent.isIntersecting) {
+      document.body.classList.remove("sticky");
+    }
   },
   {
     // In the viewport
     root: null,
     threshold: 0,
+    // Further improving it as it will now not cover a single
+    // pixel of the section-feature, as the height of the header
+    // is set to 80rem = 80 px that is why we set rootMargin to
+    // '-80px'
+    rootMargin: "-80px",
   }
 );
 
