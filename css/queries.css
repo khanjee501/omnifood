@@ -202,3 +202,46 @@ Should not use pixels on media queries.
     font-size: 3rem;
   }
 }
+
+/***********************/
+/* BELOW 704px (Smaller Tablets) */
+/***********************/
+
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .logo-col,
+  .address-col {
+    /* will span one column across 3 cols */
+    grid-column: span 3;
+  }
+
+  /* The below will move the last three columns to first row */
+  .nav-col {
+    /* Will shift last three to first row */
+    grid-row: 1;
+
+    /* will span one column to 2 cols */
+    grid-column: span 2;
+  }
+}
