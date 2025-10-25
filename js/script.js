@@ -1,9 +1,20 @@
 console.log("Hello world...!");
 
+//////////////////////////////////////////
 // adding dynamic year to copyright text.
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
 yearEl.textContent = currentYear;
+
+/////////////////////////////////////////
+// Make mobile navigation work
+const btnNavEl = document.querySelector(".btn-mobile-nav");
+const headerEl = document.querySelector(".header");
+// toggle will add the nav-open class if not present,
+// otherwise it will remove it if present
+btnNavEl.addEventListener("click", function () {
+  headerEl.classList.toggle("nav-open");
+});
 
 //////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
