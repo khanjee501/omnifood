@@ -41,6 +41,10 @@ allLinks.forEach(function (link) {
       // we don't know where to scroll hance scrollIntoView
       sectionEl.scrollIntoView({ behavior: "smooth" });
     }
+
+    if (link.classList.contains("main-nav-link")) {
+      headerEl.classList.toggle("nav-open");
+    }
   });
 });
 
