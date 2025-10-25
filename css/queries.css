@@ -1,0 +1,329 @@
+/*
+Should not use pixels on media queries.
+ For selecting the screen size for media queries, we should not use
+ rem too, because 1rem will not be equal to 10px as we set
+ by font-size: 62.5%. In the css classes, tags and selectors
+ that we will use inside media queries, we can use rem but not
+ for the max-width screen size in the construstor of media queries
+ as below. Instead we should use em instead of rem which is equal to
+ 16px. PLuse using rem in media qureis has some bugs in some browsers*/
+
+/* A media query should better work along 200px but should
+ at least work for about 150px */
+
+/***********************/
+/* BELOW 1344px (smaller desktops) */
+/***********************/
+
+@media (max-width: 84em) {
+  .hero {
+    max-width: 120rem;
+  }
+
+  .primary-heading {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/***********************/
+/* BELOW 1200px (Landscape tablets) */
+/***********************/
+
+@media (max-width: 75em) {
+  /* this is a very handy trick cuz we have now
+    set 1rem to 9px. 120rem first was 120 * 10 = 1200px and
+    now for this media query 1rem = 9px so 120rem = 1080px. Great */
+  html {
+    /* 9px / 16px = 56.25% */
+    font-size: 56.25%;
+  }
+
+  .grid {
+    column-gap: 4.8rem;
+    row-gap: 6.4rem;
+  }
+
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+
+  .heading-tertiary {
+    font-size: 2.4rem;
+  }
+
+  .header {
+    padding: 3.2rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
+  }
+
+  .testimonials-container {
+    padding: 9.6rem 3.2rem;
+  }
+}
+
+/***********************/
+/* BELOW 944px (Tablets) */
+/***********************/
+
+@media (max-width: 59em) {
+  html {
+    /* 8px / 16px = 50% */
+    font-size: 50%;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+
+  .hero-text-box,
+  .hero-image-box {
+    text-align: center;
+  }
+
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+
+  .hero-image {
+    width: 60%;
+  }
+
+  .logos img {
+    height: 2.4rem;
+  }
+
+  .step-number {
+    font-size: 7.4rem;
+  }
+
+  .meal-content {
+    padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
+
+  .btn--form {
+    margin-top: 1.2rem;
+  }
+
+  /* MOBILE NAVIGATION */
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.97);
+    /* We wont want to set relative position its parent cuz
+     we want itbas overlay over viewport*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* This will set height to the 100% of viewport height */
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* The third property is animation type */
+    transition: all 0.5s ease-in;
+
+    transform: translateX(100%);
+
+    /* Correct way to hide elements is as below by three
+    properties and not by diplay: none; */
+
+    /* Hide the element visually */
+    opacity: 0;
+
+    /* We need to amke it unaccessible to mouse and keyboard */
+    pointer-events: none;
+
+    /* Hide it from screen readers */
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    /* Reverse the three properties here */
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+
+    /* Will animate back mobile nav to viewport */
+    transform: translateX(0);
+  }
+
+  /* show close icon when nav-open class */
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  /* hide menu when nav-open class */
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+}
+
+/***********************/
+/* BELOW 704px (Smaller Tablets) */
+/***********************/
+
+@media (max-width: 44em) {
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .logo-col,
+  .address-col {
+    /* will span one column across 3 cols */
+    grid-column: span 3;
+  }
+
+  /* The below will move the last three columns to first row */
+  .nav-col {
+    /* Will shift last three to first row */
+    grid-row: 1;
+
+    /* will span one column to 2 cols */
+    grid-column: span 2;
+  }
+}
+
+/***********************/
+/* BELOW 544px (Smaller phones) */
+/***********************/
+
+@media (max-width: 34em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .btn,
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.6rem;
+  }
+
+  .section-hero {
+    padding: 2.4rem 0 6.4rem;
+  }
+
+  .hero {
+    padding: 0 3.2rem;
+  }
+
+  .hero-image {
+    width: 80%;
+  }
+
+  .logos img {
+    height: 1.2rem;
+  }
+
+  /* How section is a z style section but in one col grid
+  layout we want the images above text and the below is how
+  we fix that */
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+
+  /* To improve the gapping between the image and text
+  as images should be placed nearer to the text beneath them,
+  we will use a nice trick using transform translate as they
+  don't change spacing and distort layout. So instaed of
+  increasing margin on top of image, transform translate will
+  be better */
+
+  .step-img-box {
+    transform: translateY(2.4rem);
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.2rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-text-box {
+    padding: 3.2rem;
+  }
+
+  .cta-img-box {
+    height: 32rem;
+    grid-row: 1;
+  }
+}
