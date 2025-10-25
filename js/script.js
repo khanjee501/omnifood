@@ -16,6 +16,34 @@ btnNavEl.addEventListener("click", function () {
   headerEl.classList.toggle("nav-open");
 });
 
+/////////////////////////////////////////
+// SMooth scrolling on safari
+
+const allLinks = document.querySelectorAll("a:link");
+
+allLinks.forEach(function (link) {
+  link.addEventListener("click", function (e) {
+    // we need to prevent the default behaviour and get href
+    // with which we will write some logic
+    e.preventDefault();
+    const href = link.getAttribute("href");
+
+    // scroll to top for #
+    if (href === "#")
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+
+    if (href !== "#" && href.startsWith("#")) {
+      const sectionEl = document.querySelector(href);
+      // cannot use scrollTo cuz that will require top and
+      // we don't know where to scroll hance scrollIntoView
+      sectionEl.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});
+
 //////////////////////////////////////////////////////////
 // Fixing flexbox gap property missing in some Safari versions
 function checkFlexGap() {
