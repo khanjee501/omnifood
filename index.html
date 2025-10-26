@@ -94,11 +94,37 @@
             </div>
           </div>
           <div class="hero-image-box">
-            <img
-              src="img/hero.png"
-              class="hero-image"
-              alt="A woman enjoying food, meals in storage container and food in bowls on table"
-            />
+            <!-- 1. We need to check image sizes on larger screens.
+             Then we need to make the image rendered size double the size of
+             the pixels it is displayed on the screen. Because on high
+             density screens, two pixels are required to display one px.
+             If an image rendered size on screen is 200 * 200, we need to
+             make its intrinsic size to 400 * 400.
+
+             2. 2nd thing is to compress the images sizes by using some software
+             or online tools like sqoosh etc. Make sure the laoding page size is
+             under 1mb is desirable but should not be more than 2 mbs
+
+             3. Other considerations are as follow;
+
+              i. Donot use jpeg cuz we cant have transparent part of images in jpeg
+              even though we can compress it a lot.
+              ii. png doesn't compressa an image a lot with out distorting the quality
+              iii. A new format called webp should be used but check for browser support
+              iv. below is the trick so that if a browser doesnt support webp,
+              then it will display the second source png-->
+            <picture>
+              <!-- compressed webp version -->
+              <source srcset="img/hero.webp" type="image.webp" />
+              <!-- this should be compressed png -->
+              <source srcset="img/hero.png" type="image/png" />
+
+              <img
+                src="img/hero.png"
+                class="hero-image"
+                alt="A woman enjoying food, meals in storage container and food in bowls on table"
+              />
+            </picture>
           </div>
         </div>
       </section>
