@@ -138,10 +138,17 @@ Should not use pixels on media queries.
 
   .btn-mobile-nav {
     display: block;
+    z-index: 9999;
   }
 
   .main-nav {
-    background-color: rgba(255, 255, 255, 0.97);
+    background-color: rgba(255, 255, 255, 0.8);
+    /* check on safari, if it works fine otherwise we will use
+    webkit prefix in order to make it work on safari like below.
+    Check various browser support for various css properties
+    on caniuse.com */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     /* We wont want to set relative position its parent cuz
      we want itbas overlay over viewport*/
     position: absolute;
@@ -325,5 +332,60 @@ Should not use pixels on media queries.
   .cta-img-box {
     height: 32rem;
     grid-row: 1;
+  }
+}
+
+/***********************/
+/* FIX FOR GAP PROPERTY OF CSS GRID ON SAFARI */
+/***********************/
+
+.no-flexbox-gap .main-nav-list li:not(:last-child) {
+  margin-right: 4.8rem;
+}
+
+.no-flexbox-gap .list-item:not(:last-child) {
+  margin-bottom: 1.6rem;
+}
+
+.no-flexbox-gap .list-icon:not(:last-child) {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .delivered-faces {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .meal-attribute:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.no-flexbox-gap .meal-icon {
+  margin-right: 1.6rem;
+}
+
+.no-flexbox-gap .footer-row div:not(:last-child) {
+  margin-right: 6.4rem;
+}
+
+.no-flexbox-gap .social-links li:not(:last-child) {
+  margin-right: 2.4rem;
+}
+
+.no-flexbox-gap .footer-nav li:not(:last-child) {
+  margin-bottom: 2.4rem;
+}
+
+/* we can use one media query twice and all the styles will
+be applied */
+@media (max-width: 75em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 3.2rem;
+  }
+}
+
+@media (max-width: 59em) {
+  .no-flexbox-gap .main-nav-list li:not(:last-child) {
+    margin-right: 0;
+    margin-bottom: 4.8rem;
   }
 }

@@ -73,8 +73,17 @@ html {
   Like moving animations from right or left to viewport. So we
   use transform and translate, but will set overflow-x to hidden
   on both html and body so we can't scroll in right or left direction as that
-  will be a wrose ux. */
+  will be a wrose ux.
+  And this only works if nothing is positioned absolute in
+  relation to dody
+  */
   overflow-x: hidden;
+
+  /* this property doesn't work on safari. And even chrome uses
+  safari for rendering on macbooks and iphones. So we won't have
+  smooth scrolling just by this. Check the support for safari
+  Edge supports it now*/
+  scroll-behavior: smooth;
 }
 
 body {
